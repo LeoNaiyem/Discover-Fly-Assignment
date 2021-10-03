@@ -75,14 +75,31 @@ function countingNumOfTickets (isAdding, id){
     if(isAdding == false && currentTicketNum > 0){
         newTicketNum = currentTicketNum - 1;
     }
-
     document.getElementById(id).value = newTicketNum;
-};
 
+    subtotalCalculator()
+};
+subtotalCalculator();
 
 //getting ticket number from input box
 function getInputNumber(id){
     const input = document.getElementById(id);
     const inputNumber = parseInt(input.value);
     return inputNumber;
-}
+};
+
+
+//function calculating subtotal, tax, total
+function subtotalCalculator() {
+    const firstClassTicketQuantity = getInputNumber('first-class-input');
+    const firstClassTicketCost = firstClassTicketQuantity *150;
+    const economyTicketQuantity = getInputNumber('economy-input');
+    const economyTicketCost = economyTicketQuantity *100;
+    const subtotal = firstClassTicketCost + economyTicketCost;
+    document.getElementById('subtotal').innerText = '$' + subtotal;
+    const vat = Math.ceil((subtotal *10)/100);
+    document.getElementById('vat').innerText = '$' + vat;
+    const total = subtotal + vat;
+    document.getElementById('total').innerText = '$' + total;
+};
+
