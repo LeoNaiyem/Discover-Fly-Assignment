@@ -39,7 +39,7 @@ function priceCalculator() {
     const economyTicketCost = economyTicketQuantity *100;
     const subtotal = firstClassTicketCost + economyTicketCost;
     document.getElementById('subtotal').innerText = '$' + subtotal;
-    const vat = Math.ceil((subtotal *10)/100);
+    const vat = Math.round((subtotal *10)/100);
     document.getElementById('vat').innerText = '$' + vat;
     const total = subtotal + vat;
     document.getElementById('total').innerText = '$' + total;

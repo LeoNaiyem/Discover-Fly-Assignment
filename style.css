@@ -138,12 +138,13 @@ nav ul li a:hover, a.active{
     min-height: 60vh;
     margin: 5rem auto;
     padding: 5rem;
-    background: linear-gradient(90deg, #378ec7, #6DD5FA);
+    background: linear-gradient(90deg, #378dc7cd, #6dd4fa98);
+    border-radius: 10px;
     display: none;
 }
 
 #booking-area > h1, h2{
-    color: rgba(0, 0, 0, 0.734);
+    color: black;
     text-align: center;
     font-family: 'Dancing Script', cursive;
 
